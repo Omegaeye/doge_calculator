@@ -260,7 +260,7 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webmock
-
+bundle lock --add-platform x86_64-linux
 RUBY VERSION
    ruby 2.5.3p105
 

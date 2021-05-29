@@ -7,35 +7,6 @@
           null
         ]
       },
-      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/controllers/coins_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/poros/doge_coin.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/models/application_record.rb": {
         "lines": [
           0,
@@ -44,8 +15,53 @@
         ],
         "branches": {
         }
+      },
+      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/poros/doge_coin.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/kn/personal_project/doge_coin_calculator/doge_calculator/app/controllers/coins_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1622319580
+    "timestamp": 1622326172
   }
 }
