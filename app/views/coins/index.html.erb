@@ -30,8 +30,10 @@
  <h3>Profit and Lost</h3>
    <p> Bought at: $<%= params[:bought_price] %> </p>
    <p> Current Price at: $<%= params[:current_price] %> </p>
-   <p>Quantity: <%= params[:quantity] %></p>
-   <p>Profit and Lost</p>
+   <p> Quantity: <%= params[:quantity] %></p>
+   <p> Total Cost: $<%= params[:bought_price].to_f * params[:quantity].to_f %></p>
+   <p> Total: $<%= params[:current_price].to_f * params[:quantity].to_f %></p>
+   <p> Profit and Lost</p>
   <p>$<%= @info %></p>
 <%end%>
 
