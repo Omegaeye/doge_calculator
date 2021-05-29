@@ -3,37 +3,36 @@
 <%= form_with url: '/', method: :get, local: true do |form|%>
   <%= form.hidden_field :cost_calculation %>
   <%=form.label :price, 'Doge Coin Price'%>
-  <%=form.number_field :price, step: 0.01, required: true%>
+  <%=form.number_field :price, step: 0.001, min: 0,  required: true%>
   <%=form.label :quanity, 'Quantity of Coins' %>
-  <%=form.number_field :quantity, required: true%>
+  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%>
   <%=form.submit 'Calculate'%>
 <%end%>
 
- <% if params[:cost_calculation] %>
- <h3>Total Cost</h3>
-   <p> $<%= @info %> for <%= params[:quantity] %> coins at the price of $<%= params[:price] %></p>
+<% if params[:cost_calculation] %>
+   <h3>Total Cost</h3>
+   <p> <%= number_to_currency(@info) %> for <%= number_with_delimiter(params[:quantity], :delimiter => ',') %> coins at the price of <%= number_to_currency(params[:price]) %></p>
 <%end%>
 
 <h3> Calculate Your Profit and Lost </h3>
 <%= form_with url: '/', method: :get, local: true do |form|%>
   <%= form.hidden_field :profit_and_lost %>
   <%=form.label :bought_price, 'Price you bought coins at'%>
-  <%=form.number_field :bought_price, step: 0.01, required: true%>
-   <%=form.label :current_price, 'current coin price'%>
-  <%=form.number_field :current_price, step: 0.01, required: true%>
+  <%=form.number_field :bought_price, step: 0.001, min: 0,  required: true%>
+  <%=form.label :current_price, 'current coin price'%>
+  <%=form.number_field :current_price, step: 0.001, min: 0,  required: true%>
   <%=form.label :quanity, 'Quantity of Coins' %>
-  <%=form.number_field :quantity, required: true%>
+  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%>
   <%=form.submit 'Calculate'%>
 <%end%>
 
- <% if params[:profit_and_lost] %>
- <h3>Profit and Lost</h3>
-   <p> Bought at: $<%= params[:bought_price] %> </p>
-   <p> Current Price at: $<%= params[:current_price] %> </p>
-   <p> Quantity: <%= params[:quantity] %></p>
-   <p> Total Cost: $<%= params[:bought_price].to_f * params[:quantity].to_f %></p>
-   <p> Total: $<%= params[:current_price].to_f * params[:quantity].to_f %></p>
-   <p> Profit and Lost</p>
-  <p>$<%= @info %></p>
+<% if params[:profit_and_lost] %>
+  <h3>Profit and Lost</h3>
+  <p> Bought at: <%= number_to_currency(params[:bought_price]) %> </p>
+  <p> Current Price at: <%= number_to_currency(params[:current_price]) %> </p>
+  <p> Quantity: <%= number_with_delimiter(params[:quantity], :delimiter => ',') %></p>
+  <p> Total Cost: <%= number_to_currency(@info[:total_cost]) %></p>
+  <p> Total: <%= number_to_currency(@info[:total]) %></p>
+  <p>Profit and Lost: <%= number_to_currency(@info[:profit_and_lost]) %></p>
 <%end%>
 
