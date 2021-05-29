@@ -1,0 +1,37 @@
+<h3>Total Price Calculation</h3>
+
+<%= form_with url: '/', method: :get, local: true do |form|%>
+  <%= form.hidden_field :cost_calculation %>
+  <%=form.label :price, 'Doge Coin Price'%>
+  <%=form.number_field :price, step: 0.01, required: true%>
+  <%=form.label :quanity, 'Quantity of Coins' %>
+  <%=form.number_field :quantity, required: true%>
+  <%=form.submit 'Calculate'%>
+<%end%>
+
+ <% if params[:cost_calculation] %>
+ <h3>Total Cost</h3>
+   <p> $<%= @info %> for <%= params[:quantity] %> coins at the price of $<%= params[:price] %></p>
+<%end%>
+
+<h3> Calculate Your Profit and Lost </h3>
+<%= form_with url: '/', method: :get, local: true do |form|%>
+  <%= form.hidden_field :profit_and_lost %>
+  <%=form.label :bought_price, 'Price you bought coins at'%>
+  <%=form.number_field :bought_price, step: 0.01, required: true%>
+   <%=form.label :current_price, 'current coin price'%>
+  <%=form.number_field :current_price, step: 0.01, required: true%>
+  <%=form.label :quanity, 'Quantity of Coins' %>
+  <%=form.number_field :quantity, required: true%>
+  <%=form.submit 'Calculate'%>
+<%end%>
+
+ <% if params[:profit_and_lost] %>
+ <h3>Profit and Lost</h3>
+   <p> Bought at: $<%= params[:bought_price] %> </p>
+   <p> Current Price at: $<%= params[:current_price] %> </p>
+   <p>Quantity: <%= params[:quantity] %></p>
+   <p>Profit and Lost</p>
+  <p>$<%= @info %></p>
+<%end%>
+
