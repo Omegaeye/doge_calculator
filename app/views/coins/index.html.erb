@@ -1,11 +1,13 @@
+<h1><center>Doge Coin Calculator<center></h1>
+<center>
 <h3>Total Price Calculation</h3>
 
 <%= form_with url: '/', method: :get, local: true do |form|%>
   <%= form.hidden_field :cost_calculation %>
   <%=form.label :price, 'Doge Coin Price'%>
-  <%=form.number_field :price, step: 0.001, min: 0,  required: true%>
+  <%=form.number_field :price, step: 0.001, min: 0,  required: true%><br><br>
   <%=form.label :quanity, 'Quantity of Coins' %>
-  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%>
+  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%><br><br>
   <%=form.submit 'Calculate'%>
 <%end%>
 
@@ -18,11 +20,11 @@
 <%= form_with url: '/', method: :get, local: true do |form|%>
   <%= form.hidden_field :profit_and_lost %>
   <%=form.label :bought_price, 'Price you bought coins at'%>
-  <%=form.number_field :bought_price, step: 0.001, min: 0,  required: true%>
+  <%=form.number_field :bought_price, step: 0.001, min: 0,  required: true%><br><br>
   <%=form.label :current_price, 'current coin price'%>
-  <%=form.number_field :current_price, step: 0.001, min: 0,  required: true%>
+  <%=form.number_field :current_price, step: 0.001, min: 0,  required: true%><br><br>
   <%=form.label :quanity, 'Quantity of Coins' %>
-  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%>
+  <%=form.number_field :quantity, step: 0.001, min: 0, required: true%><br><br>
   <%=form.submit 'Calculate'%>
 <%end%>
 
@@ -35,4 +37,4 @@
   <p> Total: <%= number_to_currency(@info[:total]) %></p>
   <p>Profit and Lost: <%= number_to_currency(@info[:profit_and_lost]) %></p>
 <%end%>
-
+<center>
