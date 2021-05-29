@@ -233,7 +233,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-bundle lock --add-platform x86_64-linux
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
